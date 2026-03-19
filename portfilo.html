@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Kumar Gupta — Frontend Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --accent: #38bdf8;
+      --accent2: #818cf8;
+      --glow: rgba(56,189,248,0.18);
+      --glass: rgba(15,23,42,0.65);
+      --border: rgba(56,189,248,0.13);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #020817;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+
+    /* ── Animated mesh background ── */
+    .mesh-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(56,189,248,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(129,140,248,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 60% 30%, rgba(34,197,94,0.05) 0%, transparent 60%);
+    }
+
+    /* ── Grid dot pattern ── */
+    .grid-pattern {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(56,189,248,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* ── Glassmorphism card ── */
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    /* ── Gradient text ── */
+    .grad-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Glow button ── */
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(56,189,248,0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px rgba(56,189,248,0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #38bdf8;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      border: 1.5px solid #38bdf8;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(56,189,248,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(56,189,248,0.2);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(2,8,23,0.8);
+      border-bottom: 1px solid rgba(56,189,248,0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-link {
+      position: relative;
+      color: #94a3b8;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover { color: #38bdf8; }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* ── Hero ── */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+      position: relative;
+    }
+
+    .hero-avatar {
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(129,140,248,0.15));
+      border: 2px solid rgba(56,189,248,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem;
+      position: relative;
+      overflow: hidden;
+      animation: float 5s ease-in-out infinite;
+    }
+    .hero-avatar::before {
+      content: '';
+      position: absolute; inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #38bdf8, #818cf8, #34d399, #38bdf8);
+      z-index: -1;
+      animation: spin 4s linear infinite;
+    }
+    .hero-avatar::after {
+      content: '';
+      position: absolute; inset: 2px;
+      border-radius: 50%;
+      background: #020817;
+      z-index: -1;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-16px); }
+    }
+
+    /* ── Typing cursor ── */
+    .cursor {
+      display: inline-block;
+      width: 3px; height: 1.1em;
+      background: #38bdf8;
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 0.9s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .section-line {
+      width: 64px; height: 4px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      border-radius: 4px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── Skill card ── */
+    .skill-card {
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.35s cubic-bezier(.23,1,.32,1);
+      cursor: default;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 60px rgba(56,189,248,0.18);
+      border-color: rgba(56,189,248,0.35);
+    }
+
+    /* ── Project card ── */
+    .project-card {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(.23,1,.32,1);
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(56,189,248,0.15);
+    }
+
+    .project-img {
+      width: 100%; height: 200px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(129,140,248,0.12));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-img::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(2,8,23,0.7));
+    }
+
+    /* ── Contact form ── */
+    .form-input {
+      width: 100%;
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(56,189,248,0.15);
+      border-radius: 12px;
+      padding: 0.9rem 1.2rem;
+      color: #e2e8f0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: rgba(56,189,248,0.5);
+      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+    }
+    .form-input::placeholder { color: #475569; }
+
+    /* ── Floating orbs ── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      animation: orb-float 8s ease-in-out infinite;
+    }
+    @keyframes orb-float {
+      0%, 100% { transform: translate(0, 0); }
+      33%       { transform: translate(30px, -20px); }
+      66%       { transform: translate(-20px, 30px); }
+    }
+
+    /* ── Scroll fade-in ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Mobile menu ── */
+    #mobile-menu { transition: max-height 0.4s ease, opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+    /* ── Tag badge ── */
+    .tag {
+      display: inline-block;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.2);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      padding: 0.2rem 0.75rem;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Progress bar ── */
+    .skill-bar-outer {
+      background: rgba(56,189,248,0.08);
+      border-radius: 50px;
+      height: 6px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+    .skill-bar-inner {
+      height: 100%;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      width: 0;
+      transition: width 1.2s cubic-bezier(.23,1,.32,1);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid rgba(56,189,248,0.08);
+    }
+
+    /* ── Social icon ── */
+    .social-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(56,189,248,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: #94a3b8;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .social-icon:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      background: rgba(56,189,248,0.1);
+      transform: translateY(-3px);
+    }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      pointer-events: none;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- Backgrounds -->
+<div class="mesh-bg"></div>
+<div class="grid-pattern"></div>
+
+<!-- Toast -->
+<div id="toast">✅ Message sent successfully!</div>
+
+<!-- ════════════════════════════════
+     NAVIGATION
+════════════════════════════════ -->
+<nav>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#home" class="font-bold text-xl" style="font-family:'Syne',sans-serif;">
+      <span class="grad-text">AKG</span><span class="text-slate-400">.</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about"   class="nav-link">About</a>
+      <a href="#skills"  class="nav-link">Skills</a>
+      <a href="#projects"class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- CTA -->
+    <a href="#contact" class="hidden md:block">
+      <button class="btn-primary text-sm py-2 px-6">Hire Me</button>
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden text-slate-400 hover:text-white transition-colors" aria-label="Toggle menu">
+      <i class="fa fa-bars text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden px-6 pb-4">
+    <div class="flex flex-col gap-4 pt-2">
+      <a href="#about"   class="nav-link" onclick="closeMobile()">About</a>
+      <a href="#skills"  class="nav-link" onclick="closeMobile()">Skills</a>
+      <a href="#projects"class="nav-link" onclick="closeMobile()">Projects</a>
+      <a href="#contact" class="nav-link" onclick="closeMobile()">Contact</a>
+      <a href="#contact"><button class="btn-primary w-full">Hire Me</button></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+<section id="home" class="hero-section">
+  <!-- Orbs -->
+  <div class="orb" style="width:400px;height:400px;background:rgba(56,189,248,0.06);top:-100px;right:-100px;"></div>
+  <div class="orb" style="width:300px;height:300px;background:rgba(129,140,248,0.06);bottom:50px;left:-80px;animation-delay:3s;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+
+      <!-- Text -->
+      <div class="flex-1 text-center lg:text-left">
+        <div class="tag mb-4 reveal">👋 Welcome to my Portfolio</div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-none mb-4 reveal reveal-delay-1">
+          <span class="grad-text">Aditya</span><br/>
+          <span class="text-white">Kumar Gupta</span>
+        </h1>
+
+        <div class="text-xl md:text-2xl font-semibold text-sky-400 mb-4 reveal reveal-delay-2" style="font-family:'Syne',sans-serif;">
+          <span id="typed-text"></span><span class="cursor"></span>
+        </div>
+
+        <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 reveal reveal-delay-3">
+          I am a B.Tech CSE student and a passionate frontend developer who creates modern, responsive websites using HTML, CSS, JavaScript, and AI tools.
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center lg:justify-start reveal reveal-delay-4">
+          <a href="#contact"><button class="btn-primary text-base">
+            <i class="fa fa-envelope mr-2"></i>Hire Me
+          </button></a>
+          <a href="#projects"><button class="btn-outline text-base">
+            <i class="fa fa-folder-open mr-2"></i>View Projects
+          </button></a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex gap-8 mt-10 justify-center lg:justify-start reveal reveal-delay-4">
+          <div class="text-center">
+            <div class="text-3xl font-black grad-text">5+</div>
+            <div class="text-slate-500 text-sm">Skills</div>
+          </div>
+          <div class="w-px bg-slate-800"></div>
+          <div class="text-center">
+            <div class="text-3xl font-black grad-text">2+</div>
+            <div class="text-slate-500 text-sm">Projects</div>
+          </div>
+          <div class="w-px bg-slate-800"></div>
+          <div class="text-center">
+            <div class="text-3xl font-black grad-text">100%</div>
+            <div class="text-slate-500 text-sm">Passion</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="flex-shrink-0 reveal reveal-delay-2">
+        <div class="hero-avatar">
+          <span style="z-index:1;">👨‍💻</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     ABOUT
+════════════════════════════════ -->
+<section id="about" class="py-24 relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="tag mb-3">Get to know me</span>
+      <h2 class="section-title grad-text">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+      <!-- Card left -->
+      <div class="flex-1 glass rounded-3xl p-8 reveal">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-2xl">👨‍🎓</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">B.Tech Student</div>
+            <div class="text-slate-500 text-sm">Computer Science & Engineering</div>
+          </div>
+        </div>
+        <p class="text-slate-300 leading-relaxed text-base">
+          I am currently pursuing my <span class="text-sky-400 font-semibold">B.Tech in Computer Science Engineering</span>, where I am building a strong foundation in programming, algorithms, and software development principles.
+        </p>
+        <p class="text-slate-300 leading-relaxed text-base mt-4">
+          Alongside my studies, I am deeply passionate about <span class="text-indigo-400 font-semibold">web development</span> — I love building websites that look beautiful and work seamlessly on every device.
+        </p>
+        <p class="text-slate-300 leading-relaxed text-base mt-4">
+          I combine traditional coding skills with <span class="text-emerald-400 font-semibold">modern AI tools</span> to accelerate development workflows and produce polished, user-friendly interfaces. My focus is always on <span class="text-sky-400 font-semibold">clean UI/UX</span> that makes users feel at home.
+        </p>
+
+        <!-- Quick facts -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="text-slate-400 text-sm">Clean UI/UX Focus</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="text-2xl mb-1">🤖</div>
+            <div class="text-slate-400 text-sm">AI-Assisted Dev</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="text-2xl mb-1">📱</div>
+            <div class="text-slate-400 text-sm">Responsive Design</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="text-2xl mb-1">🚀</div>
+            <div class="text-slate-400 text-sm">Fast Learner</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="flex-1 space-y-6 reveal reveal-delay-2">
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-2">
+            <i class="fa fa-code text-sky-400"></i>
+            <span class="font-semibold text-white" style="font-family:'Syne',sans-serif;">What I Do</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">Design and develop stunning, responsive websites using HTML, CSS, JavaScript, Tailwind CSS, and AI-powered tools.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-2">
+            <i class="fa fa-lightbulb text-yellow-400"></i>
+            <span class="font-semibold text-white" style="font-family:'Syne',sans-serif;">My Approach</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">I merge creativity with code — every project is an opportunity to solve real problems through elegant, minimal design.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-2">
+            <i class="fa fa-rocket text-indigo-400"></i>
+            <span class="font-semibold text-white" style="font-family:'Syne',sans-serif;">Always Learning</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">The tech world never stops — neither do I. I continuously explore new frameworks, design trends, and AI capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SKILLS
+════════════════════════════════ -->
+<section id="skills" class="py-24 relative z-10">
+  <div class="orb" style="width:350px;height:350px;background:rgba(129,140,248,0.06);right:-80px;top:50%;transform:translateY(-50%);"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="tag mb-3">My toolkit</span>
+      <h2 class="section-title grad-text">Skills & Technologies</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- HTML -->
+      <div class="skill-card glass reveal">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(234,88,12,0.15);border:1px solid rgba(234,88,12,0.3);">🌐</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">HTML5</div>
+            <div class="text-slate-500 text-xs">Structure & Semantics</div>
+          </div>
+          <span class="ml-auto text-orange-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">90%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90" style="background:linear-gradient(90deg,#ea580c,#f97316);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">Semantic markup, accessibility, modern HTML5 APIs.</p>
+      </div>
+
+      <!-- CSS -->
+      <div class="skill-card glass reveal reveal-delay-1">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);">🎨</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">CSS3</div>
+            <div class="text-slate-500 text-xs">Styling & Animations</div>
+          </div>
+          <span class="ml-auto text-blue-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">85%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85" style="background:linear-gradient(90deg,#2563eb,#3b82f6);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">Flexbox, Grid, animations, keyframes, custom properties.</p>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill-card glass reveal reveal-delay-2">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(234,179,8,0.15);border:1px solid rgba(234,179,8,0.3);">⚡</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">JavaScript</div>
+            <div class="text-slate-500 text-xs">Interactivity & Logic</div>
+          </div>
+          <span class="ml-auto text-yellow-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">78%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="78" style="background:linear-gradient(90deg,#ca8a04,#eab308);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">DOM manipulation, events, ES6+, async operations.</p>
+      </div>
+
+      <!-- Tailwind -->
+      <div class="skill-card glass reveal reveal-delay-1">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.3);">💎</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">Tailwind CSS</div>
+            <div class="text-slate-500 text-xs">Utility-First Framework</div>
+          </div>
+          <span class="ml-auto text-cyan-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">82%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="82" style="background:linear-gradient(90deg,#0891b2,#06b6d4);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">Rapid UI development, responsive design, dark mode.</p>
+      </div>
+
+      <!-- AI Tools -->
+      <div class="skill-card glass reveal reveal-delay-2">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);">🤖</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">AI Tools</div>
+            <div class="text-slate-500 text-xs">Website Building</div>
+          </div>
+          <span class="ml-auto text-emerald-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">88%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88" style="background:linear-gradient(90deg,#16a34a,#22c55e);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">AI-powered design, code generation, and rapid prototyping.</p>
+      </div>
+
+      <!-- Responsive Design -->
+      <div class="skill-card glass reveal reveal-delay-3">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);">📱</div>
+          <div>
+            <div class="font-bold text-white" style="font-family:'Syne',sans-serif;">Responsive Design</div>
+            <div class="text-slate-500 text-xs">Mobile-First Approach</div>
+          </div>
+          <span class="ml-auto text-purple-400 font-bold text-sm" style="font-family:'Syne',sans-serif;">87%</span>
+        </div>
+        <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="87" style="background:linear-gradient(90deg,#9333ea,#a855f7);"></div></div>
+        <p class="text-slate-500 text-xs mt-3">Cross-device layouts, media queries, fluid grids.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     PROJECTS
+════════════════════════════════ -->
+<section id="projects" class="py-24 relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="tag mb-3">My work</span>
+      <h2 class="section-title grad-text">Featured Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Project 1: Aditya Tech Info -->
+      <div class="project-card glass reveal">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(56,189,248,0.1),rgba(6,182,212,0.15));">
+          <span style="position:relative;z-index:1;font-size:4rem;">💻</span>
+          <!-- Decorative circles -->
+          <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(56,189,248,0.07);top:-20px;right:-20px;"></div>
+          <div style="position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(129,140,248,0.07);bottom:10px;left:30px;"></div>
+          <!-- Corner tag -->
+          <div style="position:absolute;top:16px;left:16px;z-index:2;" class="tag">Tech</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2" style="font-family:'Syne',sans-serif;">Aditya Tech Info</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">A tech-based website showcasing modern gadgets, laptops, and product information with a clean UI and fully responsive design. Designed to give users an informative and engaging browsing experience.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <a href="https://adkumar2651.github.io/aditya-tech-info/" target="_blank" rel="noopener">
+            <button class="btn-primary w-full text-sm">
+              <i class="fa fa-external-link-alt mr-2"></i>View Project
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Dharohar -->
+      <div class="project-card glass reveal reveal-delay-2">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(16,185,129,0.15));">
+          <span style="position:relative;z-index:1;font-size:4rem;">🏛️</span>
+          <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(34,197,94,0.07);top:-20px;right:-20px;"></div>
+          <div style="position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(6,182,212,0.07);bottom:10px;left:30px;"></div>
+          <div style="position:absolute;top:16px;left:16px;z-index:2;" class="tag" style="color:#34d399;border-color:rgba(52,211,153,0.3);">Travel</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2" style="font-family:'Syne',sans-serif;">Dharohar</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">A travel-based website designed to help users explore famous tourist places and learn about popular destinations before visiting. Features beautiful imagery and detailed destination guides.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="tag">Framer</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Travel</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <a href="https://dharohar.framer.website/" target="_blank" rel="noopener">
+            <button class="btn-primary w-full text-sm">
+              <i class="fa fa-external-link-alt mr-2"></i>View Project
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     CONTACT
+════════════════════════════════ -->
+<section id="contact" class="py-24 relative z-10">
+  <div class="orb" style="width:400px;height:400px;background:rgba(56,189,248,0.05);left:-100px;bottom:0;"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="tag mb-3">Get in touch</span>
+      <h2 class="section-title grad-text">Contact Me</h2>
+      <div class="section-line"></div>
+      <p class="text-slate-400 max-w-lg mx-auto">Have a project in mind or want to collaborate? Drop a message — I'd love to hear from you!</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      <!-- Info -->
+      <div class="lg:w-5/12 space-y-5 reveal">
+        <div class="glass rounded-2xl p-6 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa fa-user text-white"></i>
+          </div>
+          <div>
+            <div class="text-slate-500 text-xs mb-0.5">Full Name</div>
+            <div class="text-white font-semibold" style="font-family:'Syne',sans-serif;">Aditya Kumar Gupta</div>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-6 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa fa-phone text-white"></i>
+          </div>
+          <div>
+            <div class="text-slate-500 text-xs mb-0.5">Phone</div>
+            <a href="tel:+918287907596" class="text-white font-semibold hover:text-sky-400 transition-colors" style="font-family:'Syne',sans-serif;">+91 82879 07596</a>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-6 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa fa-envelope text-white"></i>
+          </div>
+          <div>
+            <div class="text-slate-500 text-xs mb-0.5">Email</div>
+            <a href="mailto:tplinkgpay556@gmail.com" class="text-white font-semibold hover:text-sky-400 transition-colors break-all" style="font-family:'Syne',sans-serif;">tplinkgpay556@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-6 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fab fa-linkedin-in text-white"></i>
+          </div>
+          <div>
+            <div class="text-slate-500 text-xs mb-0.5">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/aditya-kumar-708446395" target="_blank" rel="noopener" class="text-white font-semibold hover:text-sky-400 transition-colors" style="font-family:'Syne',sans-serif;">View Profile →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="flex-1 glass rounded-3xl p-8 reveal reveal-delay-2">
+        <h3 class="text-xl font-bold text-white mb-6" style="font-family:'Syne',sans-serif;">Send a Message</h3>
+        <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-5">
+          <div>
+            <label class="block text-slate-400 text-sm mb-2">Your Name</label>
+            <input type="text" class="form-input" placeholder="John Doe" required />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-sm mb-2">Your Email</label>
+            <input type="email" class="form-input" placeholder="john@example.com" required />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-sm mb-2">Your Message</label>
+            <textarea rows="5" class="form-input resize-none" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full text-base py-3">
+            <i class="fa fa-paper-plane mr-2"></i>Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+<footer class="py-10 relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="text-xl font-black grad-text mb-1" style="font-family:'Syne',sans-serif;">Aditya Kumar Gupta</div>
+        <div class="text-slate-500 text-sm">Frontend Developer & B.Tech CSE Student</div>
+      </div>
+
+      <!-- Social -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/aditya-kumar-708446395" target="_blank" rel="noopener" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:tplinkgpay556@gmail.com" class="social-icon">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <a href="tel:+918287907596" class="social-icon">
+          <i class="fa fa-phone"></i>
+        </a>
+        <a href="https://adkumar2651.github.io/aditya-tech-info/" target="_blank" rel="noopener" class="social-icon">
+          <i class="fa fa-globe"></i>
+        </a>
+      </div>
+
+      <div class="text-slate-500 text-sm text-center md:text-right">
+        © 2026 Aditya Kumar Gupta<br/>
+        <span class="text-xs">Built with ❤️ & Tailwind CSS</span>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent mt-8"></div>
+    <div class="text-center text-slate-600 text-xs mt-4">Designed & Developed by Aditya Kumar Gupta</div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════ -->
+<script>
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const icon = hamburger.querySelector('i');
+    icon.className = mobileMenu.classList.contains('open') ? 'fa fa-times text-xl' : 'fa fa-bars text-xl';
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.querySelector('i').className = 'fa fa-bars text-xl';
+  }
+
+  /* ── Typing animation ── */
+  const phrases = [
+    'Frontend Developer',
+    'Site Designer',
+    'B.Tech CSE Student',
+    'UI/UX Enthusiast',
+    'AI Tools Expert'
+  ];
+  let pIdx = 0, cIdx = 0, deleting = false;
+  const typedEl = document.getElementById('typed-text');
+  function type() {
+    const phrase = phrases[pIdx];
+    if (!deleting) {
+      typedEl.textContent = phrase.slice(0, ++cIdx);
+      if (cIdx === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      typedEl.textContent = phrase.slice(0, --cIdx);
+      if (cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; }
+    }
+    setTimeout(type, deleting ? 60 : 100);
+  }
+  type();
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  /* ── Skill bar animation ── */
+  const bars = document.querySelectorAll('.skill-bar-inner');
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const w = e.target.dataset.width;
+        e.target.style.width = w + '%';
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(b => barObs.observe(b));
+
+  /* ── Contact form ── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+    e.target.reset();
+  }
+
+  /* ── Animate hero on load ── */
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero-section .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 150);
+    });
+  });
+</script>
+</body>
+</html>
