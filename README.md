@@ -1,193 +1,146 @@
 <div align="center">
 
-# ✈️ Wander
+# 💼 Aditya Kumar Gupta — Portfolio
 
-### *Go Somewhere Beautiful.*
+### *Frontend Developer*
 
-**AI-powered travel planning that turns your dreams into real itineraries — instantly.**
+**Personal portfolio showcasing projects, skills & experience — built with HTML, CSS & Vanilla JS.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-wander.vercel.app-blueviolet?style=for-the-badge&logo=vercel)](https://wander-rho-blush.vercel.app/)
-![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Now-brightgreen?style=for-the-badge&logo=github)](https://adkumar2651.github.io/Portfolio/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?style=for-the-badge&logo=github)](https://pages.github.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 <br/>
-
-
 
 </div>
 
 ---
 
-## 🌍 Overview
+## 👋 About Me
 
-**Wander** is an AI-powered travel planning platform that lets you plan your dream trip in seconds. Simply describe your travel dream in plain language — "beach for 7 days under ₹80k" — and our AI builds a complete, personalised itinerary with flights, hotels, and experiences, all in one place.
+Hi, I'm **Aditya Kumar Gupta** — a passionate **Frontend Developer** who loves building clean, responsive, and user-friendly web experiences. I focus on writing real, efficient code using HTML, CSS, and JavaScript — no fluff, just results.
 
-> Joined by **28,000+** travellers who planned trips this month · Rated **4.9★** on TrustPilot
-
----
-
-## ✨ Features
-
-- 🧠 **AI Itinerary Builder** — Describe your trip in natural language; get a full day-by-day plan instantly
-- ✈️ **One-Click Booking** — Flights, hotels, and experiences confirmed in minutes — no juggling 12 browser tabs
-- 💰 **Smart Savings** — AI finds the best prices; users save an average of ₹18,000+ vs. booking manually
-- ❤️ **Saved Trips** — Bookmark destinations and access your itineraries anytime
-- 🔔 **Price Alerts** — Automatic flight price tracking so you never miss a deal
-- 🌐 **180+ Destinations** — From Santorini to Kyoto to the Sahara Desert
-- 🎭 **200+ Curated Experiences** — Private cooking classes, volcano hikes, desert camps, and more
-- 📱 **Mobile-First Design** — Fully responsive UI optimised for all devices
-- 🔐 **Google Auth** — Seamless sign-in with Google
+I build everything from sleek calculators to full-fledged AI-powered travel planning apps and honest tech buying guides — all designed with the user in mind.
 
 ---
 
-## 🗺️ How It Works
+## 🚀 Featured Projects
+
+### 1. ✈️ Wander — AI Travel Planner
+> AI-powered travel planning that turns your dreams into real itineraries — instantly.
+
+- 🌍 180+ destinations · 28,000+ users · Rated 4.9★
+- Features: AI itinerary builder, one-click booking, price alerts
+- **Tech:** HTML, CSS, JavaScript, Vercel
+
+[![Live](https://img.shields.io/badge/Live-Demo-blueviolet?style=flat-square&logo=vercel)](https://wander-rho-blush.vercel.app/)
+
+---
+
+### 2. 📱 Aditya Tech Info — Smart Tech Buying Guide
+> India's honest, student-made guide to the best smartphones & laptops.
+
+- 40+ devices · 100% honest · Zero paid promotions
+- Features: Direct Amazon & Flipkart buy links, budget to flagship picks
+- **Tech:** HTML, CSS, JavaScript, GitHub Pages
+
+[![Live](https://img.shields.io/badge/Live-Demo-blue?style=flat-square&logo=github)](https://adkumar2651.github.io/aditya-tech-info/)
+
+---
+
+### 3. 🧮 JS Calculator — DarkNeo Theme
+> A sleek, minimal JavaScript calculator with a custom DarkNeo dark theme.
+
+- Features: AC, +/−, %, decimal support, smooth button animations
+- **Tech:** HTML, CSS, JavaScript, Vercel
+
+[![Live](https://img.shields.io/badge/Live-Demo-orange?style=flat-square&logo=vercel)](https://js-calculator-five-rouge.vercel.app/)
+
+---
+
+## 🛠️ Skills & Tech Stack
+
+### Languages
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### Tools & Platforms
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+
+### What I Build
+- ⚡ Responsive landing pages & personal websites
+- 🧮 Interactive JS utilities & tools
+- 🛒 Content-driven websites with buy/action links
+- ✈️ AI-integrated web applications
+
+---
+
+## 📁 Portfolio Structure
 
 ```
-1. 💬  Tell Us Your Dream
-        Type anything — "romantic Europe trip, 10 days under ₹1L"
-        
-2. 🧠  AI Builds Your Itinerary
-        Full day-by-day plan: flights, hotels, experiences — personalised to your budget & style
-        
-3. ✈️  Book in One Click
-        Approve your plan and we handle everything. Confirmed in minutes.
-```
-
----
-
-## 🏖️ Trending Destinations
-
-| Destination | Duration | Starting From |
-|---|---|---|
-| 🏛️ Santorini, Greece | 7 Days | ₹85,000 |
-| 🌸 Kyoto, Japan | 5 Days | ₹72,000 |
-| ⛵ Amalfi Coast, Italy | 6 Days | ₹96,000 |
-| 🕌 Marrakech, Morocco | 4 Days | ₹48,000 |
-| 🌴 Bali, Indonesia | 8 Days | ₹55,000 |
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | HTML5, CSS3, Vanilla JavaScript |
-| Deployment | Vercel |
-| AI Integration | OpenAI / Anthropic API |
-| Authentication | Google OAuth |
-| Styling | Custom CSS with CSS Variables |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- npm or yarn
-- API keys (see `.env.example`)
-
-### Installation
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/wander.git
-
-# 2. Navigate into the project
-cd wander
-
-# 3. Install dependencies
-npm install
-
-# 4. Set up environment variables
-cp .env.example .env.local
-# Add your API keys to .env.local
-
-# 5. Start the development server
-npm run dev
-```
-
-The app will be live at `http://localhost:3000` 🎉
-
-### Environment Variables
-
-```env
-NEXT_PUBLIC_AI_API_KEY=your_ai_api_key
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
-
----
-
-## 📁 Project Structure
-
-```
-wander/
-├── public/
-│   ├── assets/          # Images and static files
-│   └── favicon.ico
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Page routes
-│   ├── styles/          # Global CSS
-│   └── utils/           # Helper functions
-├── .env.example
-├── package.json
+Portfolio/
+├── index.html          # Main portfolio page
+├── style.css           # Styling & animations
+├── script.js           # Interactions & contact form
+├── assets/
+│   ├── images/         # Profile photo & project thumbnails
+│   └── resume.pdf      # Downloadable resume
 └── README.md
 ```
 
 ---
 
-## 💬 User Testimonials
+## 🚀 Run Locally
 
-> *"I typed 'romantic Europe trip, 10 days, surprise my wife' and Wander gave me the most perfect itinerary I could have imagined. She cried happy tears in Cinque Terre."*
-> — **Vikram Nair**, Bengaluru
+```bash
+# 1. Clone the repository
+git clone https://github.com/adkumar2651/Portfolio.git
 
-> *"Solo travel used to feel overwhelming. Wander planned my 3-week Japan trip down to train schedules and restaurant reservations. I just showed up and enjoyed."*
-> — **Ananya Joshi**, Mumbai
+# 2. Open in browser — no build needed!
+cd Portfolio
+open index.html
+```
 
-> *"Saved us ₹22,000 compared to a regular travel agent. The AI found a better hotel, cheaper flights, and added two experiences we didn't even know existed."*
-> — **The Khanna Family**, Delhi
+> Pure HTML/CSS/JS — no framework, no npm. Just open and view! ✅
 
 ---
 
-## 🤝 Contributing
+## 📬 Contact
 
-Contributions are welcome! Here's how to get started:
+Have a project in mind or want to collaborate? Let's connect!
 
-1. Fork this repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add some amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+[![Email](https://img.shields.io/badge/Email-tplinkgpay556%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:tplinkgpay556@gmail.com)
 
-Please make sure your code follows the existing code style and includes relevant tests.
+---
+
+## 🔗 Connect With Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Kumar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-kumar-708446395)
+[![Instagram](https://img.shields.io/badge/Instagram-@adkumar2651-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/adkumar2651?igsh=MTM5ZTNqbWdwZGc1ZQ==)
+[![GitHub](https://img.shields.io/badge/GitHub-adkumar2651-181717?style=for-the-badge&logo=github)](https://github.com/adkumar2651)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-**Aditya Kumar Gupta**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-kumar-708446395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/adkumar2651?igsh=MTM5ZTNqbWdwZGc1ZQ==)
+© 2026 Aditya Kumar Gupta. All rights reserved.
 
 ---
 
 <div align="center">
 
-**[🌐 Live Demo](https://wander-rho-blush.vercel.app/) · [🐛 Report Bug](https://github.com/your-username/wander/issues) · [✨ Request Feature](https://github.com/your-username/wander/issues)**
+**[🌐 Visit Portfolio](https://adkumar2651.github.io/Portfolio/)**
 
 <br/>
 
 *Made with ❤️ by Aditya Kumar Gupta*
 
-⭐ **Star this repo if you found it helpful!** ⭐
+⭐ **Agar helpful laga toh star zaroor dena!** ⭐
 
 </div>
