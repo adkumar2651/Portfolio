@@ -1,146 +1,151 @@
-<div align="center">
+# 🌐 Aditya Kumar Gupta — Personal Portfolio
 
-# 💼 Aditya Kumar Gupta — Portfolio
-
-### *Frontend Developer*
-
-**Personal portfolio showcasing projects, skills & experience — built with HTML, CSS & Vanilla JS.**
-
-[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Now-brightgreen?style=for-the-badge&logo=github)](https://adkumar2651.github.io/Portfolio/)
-[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?style=for-the-badge&logo=github)](https://pages.github.com/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-<br/>
-
-</div>
+> **Frontend Developer & B.Tech CSE Student**
+> Live Portfolio: [adkumar2651.github.io/Portfolio](https://adkumar2651.github.io/Portfolio/)
 
 ---
 
-## 👋 About Me
+## 👨‍💻 About
 
-Hi, I'm **Aditya Kumar Gupta** — a passionate **Frontend Developer** who loves building clean, responsive, and user-friendly web experiences. I focus on writing real, efficient code using HTML, CSS, and JavaScript — no fluff, just results.
-
-I build everything from sleek calculators to full-fledged AI-powered travel planning apps and honest tech buying guides — all designed with the user in mind.
+Hi, I'm **Aditya Kumar Gupta** — a passionate Frontend Developer currently pursuing **B.Tech in Computer Science Engineering**. I build modern, responsive websites using HTML, CSS, JavaScript, and AI-powered tools, with a strong focus on clean UI/UX design.
 
 ---
 
-## 🚀 Featured Projects
+## ✨ Features
 
-### 1. ✈️ Wander — AI Travel Planner
-> AI-powered travel planning that turns your dreams into real itineraries — instantly.
-
-- 🌍 180+ destinations · 28,000+ users · Rated 4.9★
-- Features: AI itinerary builder, one-click booking, price alerts
-- **Tech:** HTML, CSS, JavaScript, Vercel
-
-[![Live](https://img.shields.io/badge/Live-Demo-blueviolet?style=flat-square&logo=vercel)](https://wander-rho-blush.vercel.app/)
-
----
-
-### 2. 📱 Aditya Tech Info — Smart Tech Buying Guide
-> India's honest, student-made guide to the best smartphones & laptops.
-
-- 40+ devices · 100% honest · Zero paid promotions
-- Features: Direct Amazon & Flipkart buy links, budget to flagship picks
-- **Tech:** HTML, CSS, JavaScript, GitHub Pages
-
-[![Live](https://img.shields.io/badge/Live-Demo-blue?style=flat-square&logo=github)](https://adkumar2651.github.io/aditya-tech-info/)
+- ⚡ **Typing animation** in hero section — rotates through roles
+- 🎨 **Dark blueish theme** with cyan/purple gradient accents
+- 🌀 **Animated spinning photo ring** in hero
+- 📜 **Scroll reveal animations** on all sections
+- 📊 **Animated skill progress bars**
+- 📱 **Fully responsive** — mobile, tablet, desktop
+- 🍔 **Hamburger menu** for mobile
+- 📬 **Demo contact form** with success message simulation
+- 🐙 **GitHub & Vercel** integration section
 
 ---
 
-### 3. 🧮 JS Calculator — DarkNeo Theme
-> A sleek, minimal JavaScript calculator with a custom DarkNeo dark theme.
+## 🗂️ Sections
 
-- Features: AC, +/−, %, decimal support, smooth button animations
-- **Tech:** HTML, CSS, JavaScript, Vercel
-
-[![Live](https://img.shields.io/badge/Live-Demo-orange?style=flat-square&logo=vercel)](https://js-calculator-five-rouge.vercel.app/)
-
----
-
-## 🛠️ Skills & Tech Stack
-
-### Languages
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### Tools & Platforms
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-
-### What I Build
-- ⚡ Responsive landing pages & personal websites
-- 🧮 Interactive JS utilities & tools
-- 🛒 Content-driven websites with buy/action links
-- ✈️ AI-integrated web applications
+| Section | Description |
+|---------|-------------|
+| **Hero** | Name, animated role, photo, CTA buttons, stats |
+| **About** | Bio, future goal, skill cards |
+| **Skills** | 6 skills with animated progress bars |
+| **Projects** | 5 project cards with live & GitHub links |
+| **GitHub** | Profile link, repos, Vercel deployments |
+| **Contact** | Info cards + demo contact form |
+| **Footer** | Name, socials, copyright |
 
 ---
 
-## 📁 Portfolio Structure
+## 🚀 Projects
+
+| Project | Description | Live |
+|---------|-------------|------|
+| **Wander** | AI-powered travel planning website | [🔗](https://adkumar2651.github.io/wander/) |
+| **JS Calculator** | Dark-themed DARKNEO calculator | [🔗](https://adkumar2651.github.io/JS-CALCULATOR/) |
+| **Neon Highway** | Browser racing game on Vercel | [🔗](https://neon-highway-x.vercel.app/) |
+| **Aditya Tech Info** | Tech gadgets & laptops info site | [🔗](https://adkumar2651.github.io/aditya-tech-info/) |
+| **Dharohar** | Travel destination explorer on Framer | [🔗](https://dharohar.framer.website/) |
+
+---
+
+## 🛠️ Tech Stack
 
 ```
-Portfolio/
-├── index.html          # Main portfolio page
-├── style.css           # Styling & animations
-├── script.js           # Interactions & contact form
-├── assets/
-│   ├── images/         # Profile photo & project thumbnails
-│   └── resume.pdf      # Downloadable resume
-└── README.md
+HTML5        CSS3         JavaScript
+Tailwind CSS  AI Tools     Responsive Design
+```
+
+**Built with:**
+- Pure HTML, CSS, JavaScript — no frameworks
+- [Google Fonts](https://fonts.google.com/) — Syne + DM Sans
+- [Font Awesome 6](https://fontawesome.com/) — icons
+- CSS custom properties, animations, IntersectionObserver API
+
+---
+
+## 📁 File Structure
+
+```
+portfolio/
+│
+├── index.html        ← Complete single-file portfolio
+└── README.md         ← This file
 ```
 
 ---
 
-## 🚀 Run Locally
+## ⚙️ Setup & Usage
+
+### Run Locally
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/adkumar2651/Portfolio.git
-
-# 2. Open in browser — no build needed!
-cd Portfolio
+# Just open the file in your browser
 open index.html
+
+# Or use Live Server in VS Code
 ```
 
-> Pure HTML/CSS/JS — no framework, no npm. Just open and view! ✅
+### Deploy on GitHub Pages
+
+```bash
+# 1. Create a repo named: Portfolio
+# 2. Upload index.html
+# 3. Go to Settings → Pages → Deploy from main branch
+# 4. Your site will be live at:
+#    https://<your-username>.github.io/Portfolio/
+```
 
 ---
 
-## 📬 Contact
+## 📬 Contact Form — EmailJS Setup
 
-Have a project in mind or want to collaborate? Let's connect!
+The contact form is currently in **Demo Mode** (simulates success, no email sent).
 
-[![Email](https://img.shields.io/badge/Email-tplinkgpay556%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:tplinkgpay556@gmail.com)
+To make it **fully functional**:
+
+1. Go to [emailjs.com](https://emailjs.com) → create a free account
+2. Add Gmail as an Email Service → copy **SERVICE\_ID**
+3. Create an Email Template with these variables:
+   ```
+   {{from_name}}   ← sender's name
+   {{from_email}}  ← sender's email
+   {{message}}     ← message content
+   ```
+4. Go to Account → API Keys → copy **PUBLIC\_KEY**
+5. Copy your **TEMPLATE\_ID**
+6. In `index.html`, find the JS section and replace:
+
+```js
+emailjs.init('YOUR_PUBLIC_KEY');
+emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params)
+```
 
 ---
 
-## 🔗 Connect With Me
+## 🔗 Links
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Kumar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-kumar-708446395)
-[![Instagram](https://img.shields.io/badge/Instagram-@adkumar2651-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/adkumar2651?igsh=MTM5ZTNqbWdwZGc1ZQ==)
-[![GitHub](https://img.shields.io/badge/GitHub-adkumar2651-181717?style=for-the-badge&logo=github)](https://github.com/adkumar2651)
+| Platform | Link |
+|----------|------|
+| 🌐 Portfolio | [adkumar2651.github.io/Portfolio](https://adkumar2651.github.io/Portfolio/) |
+| 🐙 GitHub | [github.com/adkumar2651](https://github.com/adkumar2651) |
+| 🚀 Vercel | [vercel.com/adkumar2651s-projects](https://vercel.com/adkumar2651s-projects) |
+| 💼 LinkedIn | [linkedin.com/in/aditya-kumar-708446395](https://www.linkedin.com/in/aditya-kumar-708446395) |
+| 📸 Instagram | [@adkumar2651](https://www.instagram.com/adkumar2651) |
+| 📧 Email | tplinkgpay556@gmail.com |
+| 📞 Phone | +91 82879 07596 |
 
 ---
 
 ## 📄 License
 
-© 2026 Aditya Kumar Gupta. All rights reserved.
+This project is open source. Feel free to use it as inspiration for your own portfolio.
 
 ---
 
 <div align="center">
-
-**[🌐 Visit Portfolio](https://adkumar2651.github.io/Portfolio/)**
-
-<br/>
-
-*Made with ❤️ by Aditya Kumar Gupta*
-
-⭐ **Agar helpful laga toh star zaroor dena!** ⭐
-
+  <strong>© 2026 Aditya Kumar Gupta</strong><br/>
+  Built with ❤️ & passion
 </div>
